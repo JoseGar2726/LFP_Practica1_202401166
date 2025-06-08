@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="CSS/index.css">
+
+    <title>Inicio</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="nav">
+            <nav>
+                <ul id="navPrin">
+                        <li class="liNav">Pokemon USAC</li>
+                    <a href="/">
+                        <li class="liNav">Home</li>
+                    </a>
+                    <a href="/report" target="blank">
+                        <li class="liNav">Reporte Errores</li>
+                    </a>
+
+                    <li class="liNav" id="archivo">
+                        <a href="archivo">Archivo</a>
+                        <ul id="navArchivo">
+                            <li id="limpiar">Limpiar Editor</li>
+                            <li>
+                                <label for="cargar" style="cursor:pointer;">Cargar Archivo</label>
+                                <input type="file" id="cargar" accept=".pklfp" style="display: none;">
+                            </li>
+                            <li id="guardar">Guardar archivo</li>
+                        </ul>
+
+                    </li>
+
+                    </a>
+                    <a href="">
+                        <li class="liNav">Manual tecnico</li>
+                    </a>
+                    <a href="">
+                        <li class="liNav">Manual de usuario</li>
+                    </a>
+                </ul>
+            </nav>
+        </div>
+        <div class="body">
+            <div class="txtEdit">
+                <h3>Editor de Texto</h3>
+                <form action="/analyze" id="form-Analyze" method="post">
+                    <textarea type="text" name="txtArea" id="txtArea" rows="30" cols="65"
+                        placeholder="Escribe tu codigo aqui"><%= typeof codigo !== 'undefined' ? codigo: '' %></textarea>
+                    <button type="submit" value="Enviar" onclick="abrirPestanas()">Analizar</button>
+                    <script>
+                        function abrirPestanas() {
+                            const jugadores = <%- JSON.stringify(listaJugadores.map(j => j.nombre)) %>;
+                            console.log(jugadores);
+
+                            jugadores.forEach(nombreCrudo => {
+                                const nombre = nombreCrudo.replace(/"/g, ''); // Elimina comillas dobles
+                                const url = `/jugadores/${encodeURIComponent(nombre)}`;
+                                window.open(url, '_blank');
+                            });
+                        }
+                    </script>
+                </form>
+            </div>
+            <div class="tabla">
+                <table>
+                    <tr id="headerTabla">
+                        <th colspan="5">Tabla de tokens</th>
+                    </tr>
+                    <tr>
+                        <th>No.</th>
+                        <th>Fila</th>
+                        <th>Columna</th>
+                        <th>Lexema</th>
+                        <th>Token</th>
+                    </tr>
+                    <% if (tokens && tokens.length > 0) { %>
+                    <% tokens.forEach(token => { %>
+                    <tr>
+                        <td><%= contador = contador + 1 %></td>
+                        <td><%= (token.row + 1)/2 %></td>
+                        <td><%= token.column %></td>
+                        <td><%= token.lexeme %></td>
+                        <td><%= token.typeTokenString %></td>
+                    </tr>
+                    <% }) %>
+                </table>
+            </div>
+                    <% } %>
+        </div>
+
+    </div>
+    </div>
+<script src="js/index.js"> </script>
+</body>
+
+</html>

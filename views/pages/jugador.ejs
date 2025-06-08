@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="/CSS/index.css">
+    <link rel="stylesheet"  href="/CSS/pokemon.css">
+
+    <title>Jugador <%= pagjugador %></title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="nav">
+            <nav>
+                <ul id="navPrin">
+                        <li class="liNav">Pokemon USAC</li>
+                    <a href="/">
+                        <li class="liNav">Home</li>
+                    </a>
+                    <a href="">
+                        <li class="liNav">Manual tecnico</li>
+                    </a>
+                    <a href="">
+                        <li class="liNav">Manual de usuario</li>
+                    </a>
+                </ul>
+            </nav>
+        </div>
+        <div>
+            <h1>Equipo Pokemon de <%= pagjugador%></h1>
+            <div class="container">
+                <% listaPokemon.forEach((pokemon) => { %>
+                    <div class="item">
+                        <p> <%= pokemon.nombre %> </p>
+                        <img id=<%= pokemon.nombre %> alt=<%= pokemon.nombre%>>
+                        <p> <%= pokemon.tipo %> </p>
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+    <script src="/js/pokemon.js"> </script>
+</body>
+
+</html>

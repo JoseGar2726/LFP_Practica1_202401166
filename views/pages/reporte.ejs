@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="CSS/index.css">
+
+    <title>Reporte Errores</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="nav">
+            <nav>
+                <ul id="navPrin">
+                        <li class="liNav">Pokemon USAC</li>
+                    <a href="/">
+                        <li class="liNav">Home</li>
+                    </a>
+                    <a href="">
+                        <li class="liNav">Manual tecnico</li>
+                    </a>
+                    <a href="">
+                        <li class="liNav">Manual de usuario</li>
+                    </a>
+                </ul>
+            </nav>
+        </div>
+        <div class="body">
+            <div class="tabla">
+                <table>
+                    <tr id="headerTabla">
+                        <th colspan="5">Tabla de tokens</th>
+                    </tr>
+                    <tr>
+                        <th>No.</th>
+                        <th>Fila</th>
+                        <th>Columna</th>
+                        <th>Lexema</th>
+                        <th>Token</th>
+                    </tr>
+                    <% if (errors && errors.length > 0) { %>
+                    <% errors.forEach(error => { %>
+                    <tr>
+                        <td><%= contador = contador + 1 %></td>
+                        <td><%= (error.row + 1)/2 %></td>
+                        <td><%= error.column %></td>
+                        <td><%= error.lexeme %></td>
+                        <td><%= error.typeTokenString %></td>
+                    </tr>
+                    <% }) %>
+                </table>
+            </div>
+                    <% } %>
+        </div>
+
+    </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+Jugador: "Juan"{
+    "venusaur"[dragon] :=(
+        [salud]=20;
+        [ataque]=11;
+        [defensa]=20;
+    )
+    "charizard"[dragon] :=(
+        [salud]=12;
+        [ataque]=12;
+        [defensa]=15;
+    )
+    "pikachu"[dragon] :=(
+        [salud]=5;
+        [ataque]=13;
+        [defensa]=15;
+    )
+    "pichu"[dragon] :=(
+        [salud]=12;
+        [ataque]=13;
+        [defensa]=20;
+    )
+    "gallade"[normal] :=(
+        [salud]=10;
+        [ataque]=10;
+        [defensa]=10;
+    )
+    "dratini"[dragon] :=(
+        [salud]=20;
+        [ataque]=20;
+        [defensa]=20;
+    )
+    "dragonite"[normal] :=(
+        [salud]=22;
+        [ataque]=22;
+        [defensa]=22;
+    )
+}
+Jugador: "Pablo"{
+    "piplup"[agua] :=(
+        [salud]=12;
+        [ataque]=14;
+        [defensa]=15;
+    ) 
+}
