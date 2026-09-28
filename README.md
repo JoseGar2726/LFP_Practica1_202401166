@@ -1,9 +1,8 @@
-# LFP_Practica1_202401166
 # Pokémon USAC — Analizador Léxico
 
-Proyecto académico desarrollado en **TypeScript** que implementa un analizador léxico para procesar archivos y texto con información de jugadores y Pokémon.
+Proyecto académico desarrollado en **TypeScript** que implementa un analizador léxico para procesar archivos con información de jugadores y Pokémon.
 
-La aplicación incluye una interfaz web para cargar o escribir contenido, analizarlo, visualizar los tokens generados y consultar reportes de errores.
+La aplicación incluye una interfaz web que permite escribir o cargar contenido, analizarlo, visualizar los tokens generados y consultar los errores léxicos encontrados.
 
 ## Tecnologías
 
@@ -18,14 +17,15 @@ La aplicación incluye una interfaz web para cargar o escribir contenido, analiz
 ## Características
 
 - Analizador léxico implementado manualmente.
-- Generación y visualización de tokens.
-- Reporte de errores léxicos.
-- Editor de texto integrado en la aplicación web.
-- Carga y guardado de archivos `.pklfp`.
+- Identificación y clasificación de tokens.
+- Detección y reporte de errores léxicos.
+- Editor de texto integrado en la aplicación.
+- Carga de archivos `.pklfp`.
+- Visualización de fila, columna, lexema y tipo de token.
 - Procesamiento de información de jugadores y Pokémon.
-- Visualización individual de la información asociada a cada jugador.
+- Visualización individual de información asociada a cada jugador.
 
-## Estructura principal
+## Estructura del proyecto
 
 ```text
 src/
@@ -35,5 +35,55 @@ src/
 ├── routes/         # Rutas de Express
 └── index.ts        # Punto de entrada del servidor
 
-views/              # Vistas EJS
-public/             # Archivos estáticos
+views/
+└── pages/          # Vistas EJS
+
+public/             # CSS, JavaScript y recursos estáticos
+```
+
+## Ejecución
+
+### Requisitos
+
+- Node.js
+- npm
+
+### Instalación
+
+Clonar el repositorio e instalar las dependencias:
+
+```bash
+npm install
+```
+
+Ejecutar el servidor de desarrollo:
+
+```bash
+npm run dev
+```
+
+La aplicación se ejecuta en el puerto:
+
+```text
+http://localhost:3000
+```
+
+## Funcionamiento
+
+El usuario puede ingresar contenido directamente desde el editor o cargar un archivo `.pklfp`.
+
+Al realizar el análisis, la aplicación genera una tabla que muestra:
+
+- Número de token
+- Fila
+- Columna
+- Lexema
+- Tipo de token
+
+La aplicación también permite consultar un reporte de los errores encontrados durante el análisis y visualizar información individual de los jugadores procesados.
+
+## Autor
+
+**José Antonio García Roca**  
+Ingeniería en Ciencias y Sistemas  
+Universidad de San Carlos de Guatemala
